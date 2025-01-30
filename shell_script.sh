@@ -7,3 +7,6 @@
 # 
 # This script will report the AWS Resource usage.
 #########################################################
+
+sudo mkdir abhishek
+
