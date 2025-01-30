@@ -9,4 +9,7 @@
 #########################################################
 
 sudo mkdir abhishek
+sudo rmdir abhishek
+
+
 
