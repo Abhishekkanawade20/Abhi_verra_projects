@@ -12,5 +12,7 @@
 echo "below are the list of instnace"
 aws ec2 describe-instances | jq '.Reservations[].Instances[].InstanceId'
 
+aws s3 ls
+
 
 
