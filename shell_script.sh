@@ -8,8 +8,7 @@
 # This script will report the AWS Resource usage.
 #########################################################
 
-sudo mkdir abhi
-sudo rmdir abhishek
+echo "list of aws instance"
 aws ec2 describe-instances | jq '.Reservations[].Instances[].InstanceId'
 
 
