@@ -9,11 +9,11 @@
 #########################################################
 
 #list ec2 instance
-echo "below are the list of instnace"
+echo "below are the list of instnace" >> awsResource.txt
 aws ec2 describe-instances | jq '.Reservations[].Instances[].InstanceId' >> awsResource.txt
 
 #list s3 buckets
-echo "below are the list of s3 buckets" 
+echo "below are the list of s3 buckets" >> awsResource.txt
 aws s3 ls >> awsResource.txt
 
 
