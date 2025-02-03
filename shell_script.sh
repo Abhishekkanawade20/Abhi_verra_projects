@@ -9,6 +9,7 @@
 #########################################################
 
 echo "list of aws instance"
+echo "below are the list of instnace"
 aws ec2 describe-instances | jq '.Reservations[].Instances[].InstanceId'
 
 
