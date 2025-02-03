@@ -10,6 +10,7 @@
 
 sudo mkdir abhi
 sudo rmdir abhishek
+aws ec2 describe-instances | jq '.Reservations[].Instances[].InstanceId'
 
 
 
