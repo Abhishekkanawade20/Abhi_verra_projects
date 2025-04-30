@@ -11,3 +11,4 @@ resource "aws_instance" "dev_instance" {
 }
 
 # adding new line 
+#added new line
