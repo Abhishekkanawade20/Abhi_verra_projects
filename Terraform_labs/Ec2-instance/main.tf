@@ -1,13 +1,13 @@
 # This is test file 
 
 provider "aws" {
-  region = "ap-south-1"
+  region = var.region
 }
 
 
 resource "aws_instance" "dev_instance" {
-  ami = "ami-0e35ddab05955cf57"
-  instance_type = "t2.micro"
+  ami = var.aws_instance
+  instance_type = var.aws_instance
+  subnet_id = var.subnet_id
 }
 
-# adding new line 
