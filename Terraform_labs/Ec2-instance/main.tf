@@ -6,7 +6,7 @@ provider "aws" {
 
 
 resource "aws_instance" "dev_instance" {
-  ami = var.aws_instance
+  ami = var.ami
   instance_type = var.aws_instance
   subnet_id = var.subnet_id
 }
