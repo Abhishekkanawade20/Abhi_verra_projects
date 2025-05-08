@@ -10,6 +10,6 @@ resource "aws_instance" "abhishek" {
     
 }
 
-# resource "aws_s3_bucket" "mybucket" {
-#     bucket = var.bucket
-# }
+resource "aws_s3_bucket" "mybucket" {
+    bucket = var.bucket
+}
