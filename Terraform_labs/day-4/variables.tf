@@ -13,7 +13,7 @@ variable "instance_type" {
     description = " value of instance type"
 }
 
-variable "bucket" {
-    description = "bucket name"
+# variable "bucket" {
+#     description = "bucket name"
   
-}
+# }
