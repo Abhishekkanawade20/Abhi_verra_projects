@@ -1,12 +1,12 @@
 
 variable "cidr" {
   description = " value of cidr"
-  type = number
+  type = string
 }
 
 variable "cidr_block" {
     description = "value of cidr_block"
-    type = number
+    type = string
 }
 
 variable "map_public_ip_on_launch" {
