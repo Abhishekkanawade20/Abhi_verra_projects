@@ -11,5 +11,5 @@ variable "cidr_block" {
 
 variable "map_public_ip_on_launch" {
  description = "True or false"  
- type = bool
+ type = string
 }
