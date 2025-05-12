@@ -15,7 +15,7 @@ resource "aws_subnet" "subnet1" {
 }
 
 resource "aws_internet_gateway" "IGW" {
-    vpc_id = aws_vpc.myvpc
+    vpc_id = aws_vpc.myvpc.id
 }
 
 resource "aws_route_table" "rt" {
