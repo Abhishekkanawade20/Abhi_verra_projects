@@ -80,7 +80,7 @@ resource "aws_security_group" "webSg" {
 resource "aws_instance" "name" {
     ami = var.ami
     instance_type = var.instance_type
-    key_name = aws_key_pair.example.deployer
+    key_name = [aws_key_pair.example.deployer]
     subnet_id = aws_subnet.subnet1.id
     vpc_security_group_ids = [aws_security_group.ssh.id]
 }
