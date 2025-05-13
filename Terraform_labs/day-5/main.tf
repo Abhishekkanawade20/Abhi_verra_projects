@@ -87,7 +87,13 @@ resource "aws_instance" "name" {
     connection {
       type = "ssh"
       user = "ubuntu"
-      private_key = "-----BEGIN OPENSSH PRIVATE KEY-----b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZWQyNTUxOQAAACCsafa8T19NGQW4fqFCInbcvh7YllHVZ3Cw24hhVZcLkAAAAKA8jZ/HPI2fxwAAAAtzc2gtZWQyNTUxOQAAACCsafa8T19NGQW4fqFCInbcvh7YllHVZ3Cw24hhVZcLkAAAAEDRf082jxwGo5H0cKuEuQ17PmNFEWWQeUQzdnCYU60EIKxp9rxPX00ZBbh+oUIidty+HtiWUdVncLDbiGFVlwuQAAAAGU1aLUFLQU5BV0FERUBNWi1BS0FOQVdBREUBAgME-----END OPENSSH PRIVATE KEY-----"
+      private_key = "-----BEGIN OPENSSH PRIVATE KEY-----
+                    b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+                    QyNTUxOQAAACCsafa8T19NGQW4fqFCInbcvh7YllHVZ3Cw24hhVZcLkAAAAKA8jZ/HPI2f
+                    xwAAAAtzc2gtZWQyNTUxOQAAACCsafa8T19NGQW4fqFCInbcvh7YllHVZ3Cw24hhVZcLkA
+                    AAAEDRf082jxwGo5H0cKuEuQ17PmNFEWWQeUQzdnCYU60EIKxp9rxPX00ZBbh+oUIidty+
+                    HtiWUdVncLDbiGFVlwuQAAAAGU1aLUFLQU5BV0FERUBNWi1BS0FOQVdBREUBAgME
+                    -----END OPENSSH PRIVATE KEY-----"
     host = self.public_ip
     }
 
