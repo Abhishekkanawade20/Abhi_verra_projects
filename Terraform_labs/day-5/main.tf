@@ -51,24 +51,23 @@ resource "aws_security_group" "ssh" {
   description = "Allow ssh port"
   vpc_id = aws_vpc.myvpc.id
 
-  ingress = {
+  ingress = [ {
     description = "Ssh from vpc"
     from_port = 22
     to_port = 22
     protocol = "tcp"
     cidr_block = "0.0.0.0/0"
   }
-
-  egress {
+  ]
+  
+  egress = [ 
+    {
     from_port = 0
     to_port = 0
-    protocol = "-"
+    protocol = "-1"
     cidr_blocks = ["0.0.0.0/1"]
   }
-
-  tags = {
-    Name = "My-sg-1"
-  }
+  ]
 }
 
 resource "aws_instance" "name" {
