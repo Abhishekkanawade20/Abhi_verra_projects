@@ -87,14 +87,8 @@ resource "aws_instance" "name" {
     connection {
       type = "ssh"
       user = "ubuntu"
-      private_key = "-----BEGIN OPENSSH PRIVATE KEY-----
-                    b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
-                    QyNTUxOQAAACCsafa8T19NGQW4fqFCInbcvh7YllHVZ3Cw24hhVZcLkAAAAKA8jZ/HPI2f
-                    xwAAAAtzc2gtZWQyNTUxOQAAACCsafa8T19NGQW4fqFCInbcvh7YllHVZ3Cw24hhVZcLkA
-                    AAAEDRf082jxwGo5H0cKuEuQ17PmNFEWWQeUQzdnCYU60EIKxp9rxPX00ZBbh+oUIidty+
-                    HtiWUdVncLDbiGFVlwuQAAAAGU1aLUFLQU5BV0FERUBNWi1BS0FOQVdBREUBAgME
-                    -----END OPENSSH PRIVATE KEY-----"
-    host = self.public_ip
+      private_key = "-----BEGIN OPENSSH PRIVATE KEY-----\nb3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW\nQyNTUxOQAAACCsafa8T19NGQW4fqFCInbcvh7YllHVZ3Cw24hhVZcLkAAAAKA8jZ/HPI2f\nxwAAAAtzc2gtZWQyNTUxOQAAACCsafa8T19NGQW4fqFCInbcvh7YllHVZ3Cw24hhVZcLkA\nAAAEDRf082jxwGo5H0cKuEuQ17PmNFEWWQeUQzdnCYU60EIKxp9rxPX00ZBbh+oUIidty+\nHtiWUdVncLDbiGFVlwuQAAAAGU1aLUFLQU5BV0FERUBNWi1BS0FOQVdBREUBAgME\n-----END OPENSSH PRIVATE KEY-----"
+      host = self.public_ip
     }
 
     provisioner "file" {
