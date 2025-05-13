@@ -14,10 +14,6 @@ variable "map_public_ip_on_launch" {
  type = string
 }
 
-variable "subnet_id" {
-  description = "value"
-}
-
 variable "ami" {
   description = "value of ami"
 }
