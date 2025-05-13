@@ -47,21 +47,23 @@ resource "aws_key_pair" "example" {
 }
 
 resource "aws_security_group" "ssh" {
-  name = "ssh"
+  name = "ssh-sg"
   description = "Allow ssh port"
   vpc_id = aws_vpc.myvpc.id
 
-  ingress = [ {
-    description = "Ssh from vpc"
+  ingress = [ 
+    {
+    description = "ssh from vpc"
     from_port = 22
     to_port = 22
     protocol = "tcp"
-    cidr_block = "0.0.0.0/0"
+    cidr_blocks = ["0.0.0.0/0"]
   }
   ]
-  
+
   egress = [ 
     {
+    description = "Allow all outbound traffic"
     from_port = 0
     to_port = 0
     protocol = "-1"
