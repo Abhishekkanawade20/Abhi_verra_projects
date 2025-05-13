@@ -46,30 +46,35 @@ resource "aws_key_pair" "example" {
     public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKxp9rxPX00ZBbh+oUIidty+HtiWUdVncLDbiGFVlwuQ MZ-AKANAWADE@MZ-AKANAWADE"
 }
 
-resource "aws_security_group" "ssh" {
-  name = "ssh-sg"
-  description = "Allow ssh port"
+resource "aws_security_group" "webSg" {
+  name   = "web"
   vpc_id = aws_vpc.myvpc.id
 
-  ingress = [ 
-    {
-    description = "ssh from vpc"
-    from_port = 22
-    to_port = 22
-    protocol = "tcp"
+  ingress {
+    description = "HTTP from VPC"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-  ]
-
-  egress = [ 
-    {
-    description = "Allow all outbound traffic"
-    from_port = 0
-    to_port = 0
-    protocol = "-1"
-    cidr_blocks = ["0.0.0.0/1"]
+  ingress {
+    description = "SSH"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
   }
-  ]
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name = "Web-sg"
+  }
 }
 
 resource "aws_instance" "name" {
