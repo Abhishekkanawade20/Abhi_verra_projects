@@ -41,8 +41,8 @@ resource "aws_route_table_association" "a" {
 
 ##Aws instance cretion and attaching vpc to it
 
-resource "aws_key_pair" "deployer" {
-    key_name = deployer
+resource "aws_key_pair" "example" {
+    key_name = "deployer"
     public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKxp9rxPX00ZBbh+oUIidty+HtiWUdVncLDbiGFVlwuQ MZ-AKANAWADE@MZ-AKANAWADE"
 }
 
@@ -74,7 +74,7 @@ resource "aws_security_group" "ssh" {
 resource "aws_instance" "name" {
     ami = var.ami
     instance_type = var.instance_type
-    key_name = aws_key_pair.deployer.public_key
+    key_name = aws_key_pair.example.deployer
     subnet_id = aws_subnet.subnet1.id
     vpc_security_group_ids = [aws_security_group.ssh.id]
 }
