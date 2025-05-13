@@ -83,5 +83,29 @@ resource "aws_instance" "name" {
     key_name = aws_key_pair.example.key_name
     subnet_id = aws_subnet.subnet1.id
     vpc_security_group_ids = [aws_security_group.webSg.id]
+    
+    connection {
+      type = "ssh"
+      user = "ubuntu"
+      private_key = "-----BEGIN OPENSSH PRIVATE KEY-----b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZWQyNTUxOQAAACCsafa8T19NGQW4fqFCInbcvh7YllHVZ3Cw24hhVZcLkAAAAKA8jZ/HPI2fxwAAAAtzc2gtZWQyNTUxOQAAACCsafa8T19NGQW4fqFCInbcvh7YllHVZ3Cw24hhVZcLkAAAAEDRf082jxwGo5H0cKuEuQ17PmNFEWWQeUQzdnCYU60EIKxp9rxPX00ZBbh+oUIidty+HtiWUdVncLDbiGFVlwuQAAAAGU1aLUFLQU5BV0FERUBNWi1BS0FOQVdBREUBAgME-----END OPENSSH PRIVATE KEY-----"
+    host = self.public_ip
     }
+
+    provisioner "file" {
+        source = "app.py"
+        destination = "/home/ubuntu"
+    }
+
+    provisioner "remote-exec" {
+        inline = [ 
+        "echo 'Hello from the remote instance",
+        "sudo apt update -y",  # Update package lists (for ubuntu)
+        "sudo apt-get install -y python3-pip",  # Example package installation
+        "cd /home/ubuntu",
+        "sudo pip3 install flask",
+        "sudo python3 app.py &"
+         ]
+    }
+
+}
 
