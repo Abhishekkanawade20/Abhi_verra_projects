@@ -98,7 +98,7 @@ resource "aws_instance" "name" {
 
     provisioner "remote-exec" {
         inline = [ 
-        "echo 'Hello from the remote instance",
+        "echo Hello from the remote instance",
         "sudo apt update -y",  # Update package lists (for ubuntu)
         "sudo apt-get install -y python3-pip",  # Example package installation
         "cd /home/ubuntu",
