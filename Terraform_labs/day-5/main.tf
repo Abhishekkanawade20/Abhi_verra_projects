@@ -93,7 +93,7 @@ resource "aws_instance" "name" {
 
     provisioner "file" {
         source = "app.py"
-        destination = "/home/ubuntu"
+        destination = "/home/ubuntu/app.py"
     }
 
     provisioner "remote-exec" {
